@@ -6,5 +6,10 @@ namespace Provagui2
         {
             InitializeComponent();
         }
+
+        private void btnconfirmar_Click(object sender, EventArgs e)
+        {
+            string User ="ADMIN"
+        }
     }
 }
