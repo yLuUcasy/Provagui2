@@ -34,7 +34,7 @@ namespace Provagui2
 
         public override string ToString()
         {
-            return $"{Nome},{CPF},{Email},{CEP},{Logradouro},{Numero},{Bairro},{Cidade},{Estado},{Telefone},{WhatsApp}";
+            return $"{nome},{cpf},{email},{cep},{logradouro},{numero},{bairro},{cidade},{estado},{telefone},{whatsApp}";
 
         }
     }

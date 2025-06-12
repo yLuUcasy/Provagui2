@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            nome = new Label();
             txtnome = new TextBox();
             label2 = new Label();
             txtcpf = new TextBox();
@@ -52,14 +52,14 @@
             button2 = new Button();
             SuspendLayout();
             // 
-            // label1
+            // nome
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(47, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(40, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nome";
+            nome.AutoSize = true;
+            nome.Location = new Point(47, 43);
+            nome.Name = "nome";
+            nome.Size = new Size(40, 15);
+            nome.TabIndex = 0;
+            nome.Text = "Nome";
             // 
             // txtnome
             // 
@@ -259,7 +259,7 @@
             Controls.Add(txtcpf);
             Controls.Add(label2);
             Controls.Add(txtnome);
-            Controls.Add(label1);
+            Controls.Add(nome);
             Name = "clientes";
             Text = "clientes";
             ResumeLayout(false);
@@ -268,7 +268,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label nome;
         private TextBox txtnome;
         private Label label2;
         private TextBox txtcpf;

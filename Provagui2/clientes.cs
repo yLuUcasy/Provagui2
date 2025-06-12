@@ -29,14 +29,44 @@ namespace Provagui2
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            string[] dados = {
+                txtnome.Text, txtcpf.Text, txtemail.Text,
+                txtcep.Text, txtlogradouro.Text, txtnumero.Text,
+                txtbairro.Text, txtcidade.Text, txtestado.Text,
+                txttelefone.Text, txtwhatsapp.Text
+            };
+            string linha = string.Join(";", dados);
+            File.AppendAllText("clientes.csv", linha + Environment.NewLine);
+            MessageBox.Show("Cliente salvo com sucesso!");
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private async Task button1_Click(object sender, EventArgs e)
         {
             string cep = txtcep.txt.Trim().Replace("-", "");
             if (string.IsNullOrEmpty(cep)) return;
 
+            using (HttpClient client = new HttpClient()) ;
+            {
+                try
+                {
+                    string url = $"https://viacep.com.br/ws/{cep}/json/";
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    string json = await response.Content.ReadAsStringAsync();
+                    var endereco = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
+
+                    if (endereco.ContainsKey("erro"))
+                    {
+                        MessageBox.Show("CEP não encontrado.");
+                        return;
+                    }
+                    txtlogradouro.Text = endereco["logradouro"];
+                    txtbairro.Text = endereco["bairro"];
+                    txtcidade.Text = endereco["localidade"];
+                    txtestado.Text = endereco["uf"];
+
+
+                
+                }
+            }
         }
     }
 }
