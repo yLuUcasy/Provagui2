@@ -88,7 +88,7 @@
             Controls.Add(txtuser);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }
