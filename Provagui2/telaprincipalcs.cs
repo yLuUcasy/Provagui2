@@ -16,5 +16,13 @@ namespace Provagui2
         {
             InitializeComponent();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            telaprincipalcs clientes = new telaprincipalcs();
+            clientes.Show();
+            this.Hide();
+
+        }
     }
 }
